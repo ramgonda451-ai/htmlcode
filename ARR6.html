@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<body>
+    <p id="api"></p>
+    <script>
+        let file="hem.txt";
+        fetch(file)
+        .then (response=>response.text())
+        .then(data=> MyDisplayer(data));          
+        
+        function MyDisplayer(text){
+            document.getElementById("api").innerHTML=text;
+        }
+    </script>
+</body>
+<html>

@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <p id="arr"></p>
+        <script>
+            const fruits=["apple","orange","mango","banana"];
+            let flength=fruits.length;            
+            let text="<li>";
+                for (let i=0;i<flength;i++)
+            {
+                text+="<li>"+fruits[i]+"</li>";
+
+            }
+            text+="</ul>";
+              document.getElementById("arr").innerHTML=text;
+        </script>
+    </body>
+</html>

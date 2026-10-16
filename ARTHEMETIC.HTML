@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Operations</title>
+</head>
+<body>
+    <h2>Arithmetic Operations on Two Numbers</h2>
+
+    <label>Enter first number:</label>
+    <input type="number" id="num1"><br><br>
+
+    <label>Enter second number:</label>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="calculate('+')">Addition (+)</button>
+    <button onclick="calculate('-')">Subtraction (-)</button>
+    <button onclick="calculate('*')">Multiplication (*)</button>
+    <button onclick="calculate('/')">Division (/)</button>
+
+    <h3 id="result">Result: </h3>
+
+    <script>
+        function calculate(operator) {
+            let a = parseFloat(document.getElementById("num1").value);
+            let b = parseFloat(document.getElementById("num2").value);
+            let result;
+
+            if (isNaN(a) || isNaN(b)) {
+                result = "Please enter both numbers.";
+            } else {
+                switch (operator) {
+                    case '+':
+                        result = a + b;
+                        break;
+                    case '-':
+                        result = a - b;
+                        break;
+                    case '*':
+                        result = a * b;
+                        break;
+                    case '/':
+                        result = b !== 0
+                            ? a / b
+                            : "Cannot divide by zero";
+                        break;
+                }
+            }
+
+            document.getElementById("result").textContent =
+                "Result: " + result;
+        }
+    </script>
+</body>
+</html>
